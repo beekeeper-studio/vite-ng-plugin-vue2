@@ -2,7 +2,7 @@ import path from 'node:path'
 import type { SFCBlock, SFCDescriptor } from 'vue/compiler-sfc'
 import type { PluginContext, TransformPluginContext } from 'rollup'
 import type { RawSourceMap } from 'source-map'
-import { transformWithEsbuild } from 'vite'
+import { transformWithOxc } from 'vite'
 import {
   createDescriptor,
   getPrevDescriptor,
@@ -146,16 +146,11 @@ var __component__ = /*#__PURE__*/__normalizer(
       descriptor.scriptSetup?.lang === 'ts') &&
     !descriptor.script?.src // only normal script can have src
   ) {
-    const { code, map } = await transformWithEsbuild(
-      resolvedCode,
-      filename,
-      {
-        loader: 'ts',
-        target: 'esnext',
-        sourcemap: options.sourceMap
-      },
-      resolvedMap
-    )
+    const { code, map } = await transformWithOxc(resolvedCode, filename, {
+      lang: 'ts',
+      target: 'esnext',
+      sourcemap: options.sourceMap
+    })
     resolvedCode = code
     resolvedMap = resolvedMap ? (map as any) : resolvedMap
   }

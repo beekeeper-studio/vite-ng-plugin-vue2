@@ -140,7 +140,12 @@ export default function vuePlugin(rawOptions: Options = {}): Plugin {
       // select corresponding block for sub-part virtual modules
       if (query.vue) {
         if (query.src) {
-          return fs.readFileSync(filename, 'utf-8')
+          const content = fs.readFileSync(filename, 'utf-8')
+          // JSON files must be wrapped as a JS module so bundlers can parse them
+          if (/\.json(\?|$)/.test(filename)) {
+            return `export default ${content}`
+          }
+          return content
         }
         const descriptor = getDescriptor(filename, options)!
         let block: SFCBlock | null | undefined
