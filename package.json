@@ -1,5 +1,5 @@
 {
-  "name": "@vitejs/plugin-vue2",
+  "name": "vite-ng-plugin-vue2",
   "version": "3.0.0",
   "license": "MIT",
   "author": "Evan You",
