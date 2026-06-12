@@ -29,13 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitejs/vite-plugin-vue2.git",
-    "directory": "packages/plugin-vue"
+    "url": "git+https://github.com/beekeeper-studio/vite-plugin-vue2.git"
   },
   "bugs": {
-    "url": "https://github.com/vitejs/vite-plugin-vue2/issues"
+    "url": "https://github.com/beekeeper-studio/vite-plugin-vue2/issues"
   },
-  "homepage": "https://github.com/vitejs/vite-plugin-vue2/#readme",
+  "homepage": "https://github.com/beekeeper-studio/vite-plugin-vue2/#readme",
   "peerDependencies": {
     "vite": "^8.0.0",
     "vue": "^2.7.0-0"

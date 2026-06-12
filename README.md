@@ -1,4 +1,4 @@
-# @vitejs/plugin-vue2 [![npm](https://img.shields.io/npm/v/@vitejs/plugin-vue2.svg)](https://npmjs.com/package/@vitejs/plugin-vue2)
+# vite-ng-plugin-vue2 [![npm](https://img.shields.io/npm/v/vite-ng-plugin-vue2.svg)](https://npmjs.com/package/vite-ng-plugin-vue2)
 
 > [!CAUTION]
 > Vue 2 has reached EOL, and this project is no longer actively maintained.
@@ -9,7 +9,7 @@
 
 ```js
 // vite.config.js
-import vue from '@vitejs/plugin-vue2'
+import vue from 'vite-ng-plugin-vue2'
 
 export default {
   plugins: [vue()]
@@ -44,7 +44,7 @@ export interface Options {
 
 ## Asset URL handling
 
-When `@vitejs/plugin-vue2` compiles the `<template>` blocks in SFCs, it also converts any encountered asset URLs into ESM imports.
+When `vite-ng-plugin-vue2` compiles the `<template>` blocks in SFCs, it also converts any encountered asset URLs into ESM imports.
 
 For example, the following template snippet:
 
@@ -81,7 +81,7 @@ Note that only attribute values that are static strings are transformed. Otherwi
 ## Example for passing options to `vue/compiler-sfc`:
 
 ```ts
-import vue from '@vitejs/plugin-vue2'
+import vue from 'vite-ng-plugin-vue2'
 
 export default {
   plugins: [
@@ -102,7 +102,7 @@ export default {
 ## Example for transforming custom blocks
 
 ```ts
-import vue from '@vitejs/plugin-vue2'
+import vue from 'vite-ng-plugin-vue2'
 import yaml from 'js-yaml'
 
 const vueI18nPlugin = {
