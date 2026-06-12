@@ -22,7 +22,7 @@ import colors from 'picocolors'
 const indexPath = 'dist/index.cjs'
 let code = readFileSync(indexPath, 'utf-8')
 
-const matchMixed = code.match(/\nexports\["default"\] = (\w+);/)
+const matchMixed = code.match(/\nexports(?:\["default"\]|\.default) = (\w+);/)
 if (matchMixed) {
   const name = matchMixed[1]
 
