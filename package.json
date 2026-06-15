@@ -1,8 +1,8 @@
 {
   "name": "vite-ng-plugin-vue2",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "license": "MIT",
-  "author": "Evan You",
+  "author": "Evan You & Vite community",
   "packageManager": "pnpm@7.33.5",
   "files": [
     "dist"
