@@ -20,12 +20,12 @@
   "scripts": {
     "dev": "unbuild --stub",
     "build": "unbuild && tsx scripts/patchCJS.ts",
-    "test": "vitest run",
+    "test": "vitest run --config test/vitest.config.ts",
     "release": "node scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": ">=22.12.0"
   },
   "repository": {
     "type": "git",
@@ -41,18 +41,17 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^5.0.0",
     "debug": "^4.3.4",
     "enquirer": "^2.3.6",
-    "esno": "^0.16.3",
     "execa": "^4.1.0",
     "fs-extra": "^10.1.0",
     "hash-sum": "^2.0.0",
     "minimist": "^1.2.6",
     "picocolors": "^1.0.0",
     "prettier": "^2.7.1",
-    "puppeteer": "^14.4.0",
-    "rollup": "^2.75.6",
+    "puppeteer": "^24.43.1",
+    "rollup": "^4.62.0",
     "semver": "^7.3.7",
     "slash": "^3.0.0",
     "source-map": "^0.6.1",
@@ -60,7 +59,14 @@
     "typescript": "^6.0.2",
     "unbuild": "^3.6.1",
     "vite": "^8.0.8",
-    "vitest": "^0.15.1",
+    "vitest": "^4.1.9",
     "vue": "^2.7.0-beta.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "^0.28.1",
+      "postcss": "^8.5.10",
+      "handlebars": "^4.7.9"
+    }
   }
 }
