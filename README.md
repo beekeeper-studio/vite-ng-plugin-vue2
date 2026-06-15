@@ -1,6 +1,6 @@
 # vite-ng-plugin-vue2 [![npm](https://img.shields.io/npm/v/vite-ng-plugin-vue2.svg)](https://npmjs.com/package/vite-ng-plugin-vue2)
 
-> [!INFO]
+> [!NOTE]
 > We use this plugin in production. It is in active maintenance. PRs and issues welcome.
 
 ---
