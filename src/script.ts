@@ -35,8 +35,10 @@ export function resolveScript(
     return cached
   }
 
+  const { transformOptions: _drop, ...scriptOptions } = options.script ?? {}
+
   const resolved = options.compiler.compileScript(descriptor, {
-    ...options.script,
+    ...scriptOptions,
     id: descriptor.id,
     isProd: options.isProduction,
     sourceMap: options.sourceMap
