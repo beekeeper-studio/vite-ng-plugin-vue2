@@ -146,13 +146,19 @@ var __component__ = /*#__PURE__*/__normalizer(
       descriptor.scriptSetup?.lang === 'ts') &&
     !descriptor.script?.src // only normal script can have src
   ) {
-    const { code, map } = await transformWithOxc(resolvedCode, filename, {
-      lang: 'ts',
-      target: 'esnext',
-      sourcemap: options.sourceMap
-    })
+    const { code, map } = await transformWithOxc(
+      resolvedCode,
+      filename,
+      {
+        lang: 'ts',
+        target: 'esnext',
+        sourcemap: options.sourceMap,
+        ...options.script?.transformOptions
+      },
+      resolvedMap as any
+    )
     resolvedCode = code
-    resolvedMap = resolvedMap ? (map as any) : resolvedMap
+    resolvedMap = (map as any) || resolvedMap
   }
 
   return {

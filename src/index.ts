@@ -1,6 +1,10 @@
 import fs from 'node:fs'
 import { createFilter } from 'vite'
-import type { Plugin, ViteDevServer } from 'vite'
+import type {
+  Plugin,
+  ViteDevServer,
+  transformWithOxc
+} from 'vite'
 import type {
   SFCBlock,
   SFCScriptCompileOptions,
@@ -29,7 +33,14 @@ export interface Options {
   isProduction?: boolean
 
   // options to pass on to vue/compiler-sfc
-  script?: Partial<Pick<SFCScriptCompileOptions, 'babelParserPlugins'>>
+  script?: Partial<
+    Pick<SFCScriptCompileOptions, 'babelParserPlugins'> & {
+      // options for the oxc TS transpilation of the script
+      transformOptions?: Partial<
+        NonNullable<Parameters<typeof transformWithOxc>[2]>
+      >
+    }
+  >
   template?: Partial<
     Pick<
       SFCTemplateCompileOptions,
